@@ -1,0 +1,25 @@
+# ── Inputs ────────────────────────────────────────────────────────────────────
+# These are the primary experimental conditions to change between runs.
+
+initial_radius_nm: 45.0     # nm  (= 90 nm diameter particle)
+temperature_C: 140.0        # °C  (oxidation temperature)
+
+# ── Material Parameters ───────────────────────────────────────────────────────
+# Physical constants for the Cu / Cu2O system. Use bulk values.
+
+FW_Cu: 63.55                # g/mol  — formula weight of Cu metal
+FW_Cu2O: 143.09             # g/mol  — formula weight of Cu2O oxide
+rho_Cu: 8960                # kg/m³  — bulk mass density of Cu
+rho_Cu2O: 6000              # kg/m³  — bulk mass density of Cu2O
+eta: 2                      # —      — stoichiometric coefficient of Cu+ cations (from 2Cu + ½O2 → Cu2O)
+eta_prime: 1                # —      — stoichiometric coefficient of O2- anions
+
+# ── Model Parameters ──────────────────────────────────────────────────────────
+# Kinetic parameters fitted to experimental LSPR data at 140 °C.
+# See Section 8 of Susman_KE_GeneralModel.md for derivation.
+
+k_p: 10.0                   # nm²/min — parabolic rate constant (= k_in + k_out)
+phi: 0.5                    # —       — core-contraction parameter
+                            #           phi=1 → Valensi-Carter (no void)
+                            #           phi=0 → full NKE (maximum void)
+                            #           phi=0.5 → general case (Cu at 140°C)
